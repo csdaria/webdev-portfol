@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --amarillo: rgb(209, 159, 21);
+    --oscuro: rgb(162, 152, 152);
+    --blanco: rgb(250, 241, 241);
+    --negro: rgb(10, 10, 10);
+
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--oscuro);
+    font-family: 'Kanit', sans-serif;
+    color: var(--blanco);
+}
+
+.nav-bg {
+    background-color: var(--amarillo);
+    min-height: 5rem;
+}
+
+.nombre {
+    margin: 0 auto;
+}
+
+
+.bar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.bar ul,
+li,
+a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1rem;
+    color: var(--blanco);
+    text-align: right;
+    list-style: none;
+    line-height: 2rem;
+}
+
+a:hover {
+    color: black;
+}
+
+
+.nombre {
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.nombre:hover {
+    color: var(--negro);
+}
+
+
+@media (max-width: 768px) {
+
+    .bar,
+    a {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: .5rem;
+
+    }
+
+}
+
+/* main */
+
+.bgimage {
+    height: 50rem;
+    min-height: 25rem;
+    background: url('../img/haidao-1.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* main - texto sobre imagen*/
+
+.contenido-ban {
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg_title {
+    font-size: 4.5rem;
+}
+
+.bg_desc {
+    font-size: 2rem;
+}
+
+.main-text {
+    text-align: center;
+    margin: 50px;
+    color: white;
+}
+
+/* Servicios */
+
+.servicios {
+    display: inline-block;
+}
+
+.serv-pro {
+    max-width: 25%;
+}
+
+.serv-title {
+    text-align: center;
+
+
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    grid-gap: 2em;
+    padding: 2rem;
+
+}
+
+.gridbox {
+    background: rgb(209, 159, 21);
+    margin: 10px;
+    height: 200px;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+
+}
+
+svg {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.rotulo {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+/* Proyectos */
+
+.proyectos {
+    max-width: 70%;
+    margin-left: 40%;
+
+}
+
+.pro-title {
+    color: var(--blanco);
+    padding: 2rem;
+    text-align: center;
+}
+
+
+.contenedor-galeria {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.pro-img {
+    width: 400px;
+    height: 300px;
+    margin-bottom: 30px;
+    object-fit: cover;
+    filter: brightness(70%);
+
+}
+
+.pro-img:hover {
+    filter: brightness(100%);
+}
+
+/*Skills*/
+
+.skills-content {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+}
+
+.skills {
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.skills img {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+
+
+}
+
+/*Footer*/
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--amarillo);
+    width: 100%;
+
+}
+
+.footer-content correo {
+    line-height: 2rem;
+}
+
+.footer-content svg {
+    width: 40px;
+    height: 40px;
+    margin-right: 2rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width: 768px) {
+
+    .footer-content {
+        margin: 0;
+        padding: .5rem;
+        display: block;
+        text-align: center;
+    }
+
+}
