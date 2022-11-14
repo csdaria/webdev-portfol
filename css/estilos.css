@@ -8,6 +8,7 @@
     --oscuro: rgb(162, 152, 152);
     --blanco: rgb(250, 241, 241);
     --negro: rgb(10, 10, 10);
+    --plata: rgb(71, 71, 71);
 
 }
 
@@ -34,6 +35,7 @@ body {
 
 
 .bar {
+
     display: flex;
     width: 100%;
     align-items: center;
@@ -43,7 +45,7 @@ body {
 
 .bar ul,
 li,
-a {
+.bar-cat {
     font-size: 1.5rem;
     text-decoration: none;
     display: inline-block;
@@ -54,7 +56,7 @@ a {
     line-height: 2rem;
 }
 
-a:hover {
+.bar-cat:hover {
     color: black;
 }
 
@@ -66,23 +68,24 @@ a:hover {
 
 .nombre:hover {
     color: var(--negro);
+
 }
 
 
 @media (max-width: 768px) {
 
     .bar,
-    a {
+    .bar-cat {
         display: block;
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin: 0;
-        padding: .5rem;
+        min-width: 9rem;
 
     }
 
 }
+
 
 /* main */
 
@@ -96,8 +99,6 @@ a:hover {
     margin-bottom: 2rem;
 }
 
-/* main - texto sobre imagen*/
-
 .contenido-ban {
     background-color: rgba(0, 0, 0, .6);
     width: 100%;
@@ -109,6 +110,13 @@ a:hover {
     justify-content: center;
 }
 
+
+/* texto sobre imagen*/
+.bg_title .bg_desc .bg_text {
+    min-height: 200px;
+    max-height: 400px;
+}
+
 .bg_title {
     font-size: 4.5rem;
 }
@@ -117,45 +125,90 @@ a:hover {
     font-size: 2rem;
 }
 
-.main-text {
+.bg_text {
     text-align: center;
-    margin: 50px;
+    margin: 5rem;
     color: white;
+    font-size: 20px;
+
 }
 
-/* Servicios */
-
-.servicios {
-    display: inline-block;
+.bg_title:hover {
+    filter: brightness(100%);
+    animation: escalar 1.5s;
 }
 
-.serv-pro {
-    max-width: 25%;
+.bg_desc:hover {
+    filter: brightness(100%);
+    animation: escalar 1.5s;
 }
 
-.serv-title {
+.bg_text:hover {
+    filter: brightness(100%);
+    animation: escalar 1.5s;
+
+}
+
+/*Servicios y proyectos*/
+
+.servpro {
+    display: inline-flex;
+
+}
+
+h2 {
+    color: whitesmoke;
+    font-weight: 900;
     text-align: center;
-
-
 }
 
 .grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+
     grid-gap: 2em;
     padding: 2rem;
+    min-width: 35%;
+
+
 
 }
 
 .gridbox {
     background: rgb(209, 159, 21);
     margin: 10px;
-    height: 200px;
+    min-height: 7rem;
+    min-width: 9rem;
     padding: 1rem;
     text-align: center;
     border-radius: 5px;
     box-shadow: 2px 2px 5px black;
+    filter: brightness(100%);
+    animation: escalar 1.5s;
 
+}
+
+
+/*Key: https://www.sitepoint.com/community/t/visibility-upon-hover/42242/2*/
+
+.hidden-text {
+    visibility: hidden;
+}
+
+.hidden-desc:hover .hidden-text {
+    visibility: visible;
+    font-size: 1rem;
+    padding: 2rem;
+    background-color: var(--plata);
+    opacity: 0.4;
+    color: var(--blanco);
+    border-radius: 3rem;
+}
+
+.gridbox:hover {
+    visibility: visible;
+}
+
+.grid-box:hover {
+    visibility: visible;
 }
 
 svg {
@@ -164,76 +217,76 @@ svg {
     margin-bottom: 20px;
 }
 
-.rotulo {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
-
-/* Proyectos */
-
-.proyectos {
-    max-width: 70%;
-    margin-left: 40%;
-
-}
-
-.pro-title {
-    color: var(--blanco);
-    padding: 2rem;
-    text-align: center;
-}
-
-
 .contenedor-galeria {
+    width: 100%;
     padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: auto;
+
 }
+
+/*Adaptado de: https://www.youtube.com/watch?v=qdRPKfJWngk&ab_channel=J%26GProyectosWeb; asistencia de: https://stackoverflow.com/questions/50331594/keyframe-animation-on-hover* y https://medium.com/front-end-chile/alinear-im%C3%A1genes-de-distinto-tama%C3%B1o-con-la-propiedad-object-fit-de-css-81426b7d5e64/*/
 
 .pro-img {
-    width: 400px;
-    height: 300px;
+    margin-top: 1rem;
+    max-width: 45%;
+    max-height: 30%;
+    object-fit: none;
+    width: auto;
+    height: auto;
     margin-bottom: 30px;
     object-fit: cover;
     filter: brightness(70%);
+    cursor: pointer;
+    margin-left: 2rem;
+    animation: none;
 
 }
+
+
+/*Asistencia de: https://stackoverflow.com/questions/50331594/keyframe-animation-on-hover*/
 
 .pro-img:hover {
     filter: brightness(100%);
+    animation: escalar 1.5s;
+
 }
+
+@keyframes escalar {
+    to {
+        transform: scale(1);
+    }
+
+    from {
+        transform: scale(1.5);
+    }
+}
+
+@media (min-width:780px) {
+    .pro-img {
+        width: 25%;
+        height: 25%;
+    }
+}
+
+
+@media (min-width:775px) {
+    .pro-img {
+        max-height: 200px;
+        width: 100%;
+    }
+}
+
 
 /*Skills*/
 
 .skills-content {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-
+    text-align: center
 }
 
-.skills {
-    justify-content: center;
-    align-items: center;
-}
-
-h2 {
-    text-align: center;
-}
 
 .skills img {
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
-
+    width: 75px;
+    height: 75px;
+    display: flex;
 
 }
 
@@ -249,8 +302,12 @@ h2 {
 
 }
 
-.footer-content correo {
+
+.correo {
     line-height: 2rem;
+    text-decoration: none;
+    color: white;
+    padding: 2rem;
 }
 
 .footer-content svg {
@@ -262,7 +319,7 @@ h2 {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 757px) {
 
     .footer-content {
         margin: 0;
