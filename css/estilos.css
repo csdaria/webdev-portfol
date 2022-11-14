@@ -317,6 +317,11 @@ svg {
 
 }
 
+.social {
+    margin: 1rem;
+    text-align: center;
+
+}
 
 .correo {
     line-height: 2rem;
@@ -328,7 +333,7 @@ svg {
 .footer-content svg {
     width: 40px;
     height: 40px;
-    margin-right: 2rem;
+
     justify-content: center;
     align-items: center;
 
@@ -337,8 +342,6 @@ svg {
 @media (max-width: 757px) {
 
     .footer-content {
-        margin: 0;
-        padding: .5rem;
         display: block;
         text-align: center;
     }
