@@ -197,9 +197,13 @@ h2 {
     visibility: hidden;
 }
 
+.hidden-desc:hover {
+    animation: escalar .5s;
+}
+
 .hidden-desc:hover .hidden-text {
     visibility: visible;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 2rem;
     background-color: var(--plata);
     opacity: 0.4;
@@ -220,6 +224,17 @@ svg {
 .contenedor-galeria {
     width: 100%;
     padding: 2rem;
+
+}
+
+@media (max-height: 915px) {
+    .hidden-desc:hover .hidden-text {
+        max-width: 100%;
+        font-size: 1rem;
+
+
+    }
+
 
 }
 
