@@ -9,6 +9,7 @@
     --blanco: rgb(250, 241, 241);
     --negro: rgb(10, 10, 10);
     --plata: rgb(71, 71, 71);
+    --marron: rgb(158, 121, 21);
 
 }
 
@@ -16,6 +17,7 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
+    /*esconde la temida barra horizontal*/
 }
 
 body {
@@ -90,7 +92,7 @@ li,
 /* main */
 
 .bgimage {
-    height: 50rem;
+    height: 60rem;
     min-height: 25rem;
     background: url('../img/haidao-1.png');
     background-repeat: no-repeat;
@@ -102,7 +104,7 @@ li,
 .contenido-ban {
     background-color: rgba(0, 0, 0, .6);
     width: 100%;
-    height: 100%;
+    height: 120%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -112,10 +114,6 @@ li,
 
 
 /* texto sobre imagen*/
-.bg_title .bg_desc .bg_text {
-    min-height: 200px;
-    max-height: 400px;
-}
 
 .bg_title {
     font-size: 4.5rem;
@@ -127,7 +125,7 @@ li,
 
 .bg_text {
     text-align: center;
-    margin: 5rem;
+    margin: 2rem;
     color: white;
     font-size: 20px;
 
@@ -158,22 +156,28 @@ li,
 
 h2 {
     color: whitesmoke;
-    font-weight: 900;
+    font-size: 2rem;
     text-align: center;
 }
 
-.grid-wrapper {
-
-    grid-gap: 2em;
-    padding: 2rem;
-    min-width: 35%;
-
-
+.ms-title {
+    font-size: 3rem;
+    background-color: var(--marron);
+    box-shadow: 2px 2px 2px rgba(255, 255, 255);
+    margin-bottom: 1rem;
+    opacity: 0.5;
 
 }
 
+
+.grid-wrapper {
+    grid-gap: 2em;
+    min-width: 35%;
+}
+
 .gridbox {
-    background: rgb(209, 159, 21);
+    background: var(--amarillo);
+    ;
     margin: 10px;
     min-height: 7rem;
     min-width: 9rem;
@@ -195,7 +199,7 @@ h2 {
 
 .hidden-desc:hover .hidden-text {
     visibility: visible;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 2rem;
     background-color: var(--plata);
     opacity: 0.4;
@@ -204,10 +208,6 @@ h2 {
 }
 
 .gridbox:hover {
-    visibility: visible;
-}
-
-.grid-box:hover {
     visibility: visible;
 }
 
