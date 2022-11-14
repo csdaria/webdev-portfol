@@ -82,8 +82,16 @@ li,
         justify-content: center;
         align-items: center;
         text-align: center;
-        min-width: 9rem;
+        min-width: 10rem;
+        margin-right: 3rem;
 
+
+    }
+
+    .nombre {
+        margin-top: 1rem;
+        margin-right: 3rem;
+        text-align: center;
     }
 
 }
